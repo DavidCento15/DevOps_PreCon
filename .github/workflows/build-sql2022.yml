@@ -1,4 +1,4 @@
-name: Test SQL project with SQL Server 2022
+  name: Test SQL project with SQL Server 2022
 
   on:
     workflow_dispatch:
