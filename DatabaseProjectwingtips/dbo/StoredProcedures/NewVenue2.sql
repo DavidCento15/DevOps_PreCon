@@ -1,6 +1,6 @@
 CREATE PROCEDURE [dbo].[NewVenue2]
       @VenueId  INT,
-      @VenueName NVARCHAR(50),
+      @VenueName NVARCHAR(128),
       @VenueType NVARCHAR(30) = 'multipurpose',
       @PostalCode NVARCHAR(20) = '85295',
       @CountryCode CHAR(3) = 'USA'
