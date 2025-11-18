@@ -60,3 +60,7 @@
         - name: Publish SQL project
           run: |
             sqlpackage /Action:Publish /SourceFile:DatabaseProjectwingtips/bin/Debug/DatabaseProjectwingtips.dacpac /TargetConnectionString:"Data Source=localhost,1433;Database=Wingtips;User ID=sa;Password=${{ secrets.CONTAINER_SQL_PASSWORD }};TrustServerCertificate=True;" /p:AllowIncompatiblePlatform=true
+
+        - name: Select some data
+          run: |
+            sqlcmd -S localhost -U sa -P ${{ secrets.CONTAINER_SQL_PASSWORD }} -d master -Q "SELECT * FROM Wingtips.dbo.Venues"        
