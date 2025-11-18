@@ -55,6 +55,7 @@
           run: |
             sqlcmd -S localhost -U sa -P ${{ secrets.CONTAINER_SQL_PASSWORD }} -d master -Q "EXEC sp_configure 'show advanced options', 1; RECONFIGURE;"
             sqlcmd -S localhost -U sa -P ${{ secrets.CONTAINER_SQL_PASSWORD }} -d master -Q "EXEC sp_configure 'contained database authentication', 1; RECONFIGURE;"
+            sqlcmd -S localhost -U sa -P ${{ secrets.CONTAINER_SQL_PASSWORD }} -d master -Q "SELECT * FROM Wingtips.dbo.Venues"
 
         - name: Publish SQL project
           run: |
